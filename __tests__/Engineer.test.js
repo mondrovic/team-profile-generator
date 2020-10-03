@@ -18,5 +18,7 @@ test("checks email for return", () => {
 test("checks roles", () => {
   const engineer = new Engineer("mondrovic");
 
-  expect(engineer.getRole()).toBe("Engineer");
+  expect(engineer.getRole()).toEqual(
+    expect.stringContaining(engineer.constructor.name)
+  );
 });
